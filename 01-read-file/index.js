@@ -6,4 +6,4 @@ const readableStream = fs.createReadStream(path.join(__dirname, "text.txt"), "ut
 let data = '';
 readableStream.on('data', chunk => data += chunk);
 readableStream.on('end', () => stdout.write(data));
-readableStream.on('error', error => console.log('Error', error.message));
+readableStream.on('error', error => console.error(error.message));
