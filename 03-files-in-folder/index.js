@@ -5,7 +5,7 @@ fs.promises.readdir(path.join(__dirname, "./secret-folder"), { withFileTypes: tr
   for (const file of files) {
     if (file.isFile()) {
       const name = file.name;
-      const filePath = path.join(__dirname, './secret-folder', name);
+      const filePath = path.join(__dirname, "./secret-folder", name);
       const extension = path.extname(name).slice(1);
       fs.stat(filePath, (err, stats) => {
         console.log(stats.size);
