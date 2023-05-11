@@ -10,7 +10,7 @@ async function read() {
         const filePath = path.join(__dirname, "./secret-folder", name);
         const extension = path.extname(name).slice(1);
         fs.stat(filePath, (err, stats) => {
-          console.log(`${name} - ${extension} - ${(stats.size / 1024).toFixed(3)}kb`);
+          console.log(`${name.split(".")[0]} - ${extension} - ${(stats.size / 1024).toFixed(3)}kb`);
         });
       }
     }
